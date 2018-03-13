@@ -1,0 +1,22 @@
+{
+  "name": "bradito-dot-me",
+  "version": "0.0.1",
+  "description": "website source for bradito.me",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phlogisticfugu/bradito-dot-me.git"
+  },
+  "author": "Brad Ito <phlogisticfugu@gmail.com>",
+  "license": "Apache 2.0",
+  "bugs": {
+    "url": "https://github.com/phlogisticfugu/bradito-dot-me/issues"
+  },
+  "homepage": "https://github.com/phlogisticfugu/bradito-dot-me#readme",
+  "devDependencies": {
+    "nuxt": "^1.4.0"
+  }
+}
