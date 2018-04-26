@@ -1,22 +1,26 @@
 {
   "name": "bradito-dot-me",
-  "version": "0.0.1",
-  "description": "website source for bradito.me",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/phlogisticfugu/bradito-dot-me.git"
-  },
+  "version": "1.0.0",
+  "description": "Nuxt.js project",
   "author": "Brad Ito <phlogisticfugu@gmail.com>",
-  "license": "Apache 2.0",
-  "bugs": {
-    "url": "https://github.com/phlogisticfugu/bradito-dot-me/issues"
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "analyze": "nuxt build --analyze",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "precommit": "npm run lint"
   },
-  "homepage": "https://github.com/phlogisticfugu/bradito-dot-me#readme",
-  "devDependencies": {
+  "dependencies": {
     "nuxt": "^1.4.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.1",
+    "eslint": "^4.15.0",
+    "eslint-friendly-formatter": "^3.0.0",
+    "eslint-loader": "^1.7.1",
+    "eslint-plugin-vue": "^4.0.0"
   }
 }
