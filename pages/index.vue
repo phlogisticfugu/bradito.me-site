@@ -24,6 +24,9 @@
             <v-btn fab href="https://twitter.com/phlogisticfugu" title="twitter">
               <v-icon x-large dark>fab fa-twitter</v-icon>
             </v-btn>
+            <v-btn fab href="https://www.meetup.com/members/127041172/" title="meetup">
+              <v-icon x-large dark>fab fa-meetup</v-icon>
+            </v-btn>
           </div>
         </v-layout>
       </v-parallax>
