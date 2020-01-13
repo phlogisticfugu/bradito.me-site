@@ -1,9 +1,10 @@
-.DS_Store
-
-# dependencies
+# Project dependencies
+.cache
 node_modules
+yarn-error.log
+package-lock.json
+yarn.lock
 
-# logs
-npm-debug.log
-
-.project
+# Build directory
+/public
+.DS_Store
