@@ -1,13 +1,9 @@
-# dependencies
+# Project dependencies
+.cache
 node_modules
+yarn-error.log
+package-lock.json
 
-# logs
-npm-debug.log
-
-# Nuxt build
-.nuxt
-
-# Nuxt generate
-dist
-
-.project
+# Build directory
+/public
+.DS_Store
