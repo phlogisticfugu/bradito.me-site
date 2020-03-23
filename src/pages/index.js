@@ -58,6 +58,13 @@ const IndexPage = () => (
               <p>
                 Tech: Javascript (Express.js, Vue.js), Python (Flask), R, Spark, Serverless, Docker, AWS
               </p>
+              <h4>Technical Blog Posts</h4>
+              <ul>
+                <li><a href="https://retina.ai/blog/marketing-data-checklist/">Marketing Data Checklist</a></li>
+                <li><a href="https://retina.ai/blog/7-ways-machine-learning-projects-fail/">7 Ways Machine Learning Projects Fail</a></li>
+                <li><a href="https://retina.ai/blog/dataops-principles/">DataOps Principles</a></li>
+                <li><a href="https://retina.ai/blog/serverless-principles/">Serverless Principles</a></li>
+              </ul>
             </div>
           </div>
         </section>
