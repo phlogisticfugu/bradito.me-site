@@ -156,8 +156,19 @@ const IndexPage = () => (
               </p>
             </section>
             <section>
-              
-              &nbsp;
+              <span className="icon major fa-github" />
+              <h3>Creator of open source packages:</h3>
+              <ul>
+                <li>
+                  <a href="https://www.npmjs.com/package/generator-suf-stack-aws-koa-nuxt">suf-stack-aws-koa-nuxt</a>
+                </li>
+                <li>
+                  <a href="https://www.npmjs.com/package/gulp-indexify">gulp-indexify</a>
+                </li>
+                <li>
+                  <a href="https://github.com/phlogisticfugu/squirt">squirt</a>
+                </li>
+              </ul>
             </section>
           </div>
         </div>
