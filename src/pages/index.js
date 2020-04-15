@@ -142,9 +142,9 @@ const IndexPage = () => (
             </section>
             <section>
               <span className="icon major fa-code" />
-              <h3>SUF Stack</h3>
+              <h3><a href="https://suf-stack.org/">SUF Stack</a></h3>
               <p>
-                Creator of the SUF Stack - Serverless, Universal, Full-stack web apps.  For improved
+                Creator of the <a href="https://suf-stack.org/">SUF Stack</a> - Serverless, Universal, Full-stack web apps.  For improved
                 developer and user performance and usability.
               </p>
             </section>
@@ -153,6 +153,9 @@ const IndexPage = () => (
               <h3>MIT Club of Dallas-Fort Worth</h3>
               <p>
                 VP of Programs
+              </p>
+              <p>
+                Prior board member of the MIT Club of Southern California
               </p>
             </section>
             <section>
