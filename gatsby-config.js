@@ -4,7 +4,6 @@ module.exports = {
     title: 'Brad Ito - personal site',
   },
   plugins: [
-    'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
