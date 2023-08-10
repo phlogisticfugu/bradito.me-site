@@ -21,7 +21,9 @@ module.exports = {
       options: {
         trackingIds: [
           'G-D12TFQCZTV'
-        ]
+        ],
+        pluginConfig: {
+          head: true
       }
     },
     'gatsby-plugin-sass',
