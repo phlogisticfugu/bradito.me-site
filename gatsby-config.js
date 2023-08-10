@@ -24,6 +24,7 @@ module.exports = {
         ],
         pluginConfig: {
           head: true
+        }
       }
     },
     'gatsby-plugin-sass',
