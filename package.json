@@ -25,7 +25,7 @@
   },
   "scripts": {
     "develop": "gatsby develop",
-    "build": "npm run clean && gatsby build && rimraf docs && mv public docs",
+    "build": "npm run clean && gatsby build && rimraf docs && mv public docs && cp ./CNAME docs/CNAME",
     "deploy": "npm run clean && gatsby build --prefix-paths && gh-pages -d public",
     "serve": "gatsby serve",
     "clean": "rimraf .cache public docs",
