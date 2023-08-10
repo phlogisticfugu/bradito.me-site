@@ -7553,6 +7553,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"gatsby-plugin-google-gtag@npm:^5.11.0":
+  version: 5.11.0
+  resolution: "gatsby-plugin-google-gtag@npm:5.11.0"
+  dependencies:
+    "@babel/runtime": ^7.20.13
+    minimatch: ^3.1.2
+  peerDependencies:
+    gatsby: ^5.0.0-next
+    react: ^18.0.0 || ^0.0.0
+    react-dom: ^18.0.0 || ^0.0.0
+  checksum: 4661bc1550d33ea879c0d7d291fb6f4a5d46c3ac9d2fee82472e68bc3ff6ad99eb263e3f7f858667255d8f5bf04ac8a5aeb38f061047ed5358ed158a90caf9d0
+  languageName: node
+  linkType: hard
+
 "gatsby-plugin-manifest@npm:^5.11.0":
   version: 5.11.0
   resolution: "gatsby-plugin-manifest@npm:5.11.0"
@@ -7699,6 +7713,7 @@ __metadata:
   resolution: "gatsby-starter-hyperspace@workspace:."
   dependencies:
     gatsby: ^5.11.0
+    gatsby-plugin-google-gtag: ^5.11.0
     gatsby-plugin-manifest: ^5.11.0
     gatsby-plugin-offline: ^6.11.0
     gatsby-plugin-sass: ^6.11.0
