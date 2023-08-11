@@ -11,16 +11,12 @@ export class Sidebar extends Component {
         { content: 'Welcome', anchor: 'intro' },
         { content: 'Professional', anchor: 'one' },
         { content: 'Community', anchor: 'two' }
-      ],
-      links: [
-        { content: 'Blog', to: '/blog' },
       ]
     };
   }
 
   render() {
-    const { tabs, links } = this.state;
-    console.log({ links })
+    const { tabs } = this.state;
     return (
       <section id="sidebar">
         <div className="inner">
@@ -39,13 +35,6 @@ export class Sidebar extends Component {
                   </li>
                 );
               })}
-              {links.map((link, i) => {
-              return (
-                <li key={`link-${link.content}`}>
-                  <Link to={link.to}>{link.content}</Link>
-                </li>
-              );
-            })}
             </Scrollspy>
           </nav>
         </div>

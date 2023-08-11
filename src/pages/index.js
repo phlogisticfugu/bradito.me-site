@@ -4,9 +4,11 @@ import Layout from '../components/layout';
 import Footer from '../components/Footer';
 import Sidebar from '../components/Sidebar';
 import Scroll from '../components/Scroll';
+import Header from '../components/Header';
 
 const IndexPage = () => (
   <Layout>
+    <Header />
     <Sidebar />
 
     <div id="wrapper">
