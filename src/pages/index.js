@@ -57,7 +57,7 @@ const IndexPage = () => (
                 on predicting customer behavior.
               </p>
               <p>
-                Tech: Javascript (Express.js, Vue.js), Python (Flask), R, Spark, Serverless, Docker, AWS
+                Tech: Javascript (Express.js, Vue.js, DevExtreme, Highcharts, Plotly), Python (Flask, FastAPI), R, Spark (Databricks), Serverless, Docker, Snowflake, Firebolt, AWS
               </p>
               <h4>Technical Blog Posts</h4>
               <ul>
@@ -66,6 +66,23 @@ const IndexPage = () => (
                 <li><a href="https://retina.ai/blog/dataops-principles/">DataOps Principles</a></li>
                 <li><a href="https://retina.ai/blog/serverless-principles/">Serverless Principles</a></li>
               </ul>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div className="content">
+            <div className="inner">
+              <h2>Topaz Labs - Dir of Engineering</h2>
+              <p>
+                <a href="https://www.topazlabs.com/">Topaz Labs</a> uses AI to enhance images and video.  Led engineering team for this profitable, bootstrapped company.
+              </p>
+              <p>
+                As featured by industry partners (Intel, AMD, NVIDIA, Microsoft, Apple), Topaz Labs is the leader in deep learning-based image and video enhancement for photographers.
+                Topaz Labs products are used by tens of thousands of photographers and videographers around the world.
+              </p>
+              <p>
+                Tech: C++ (Qt Framework), Python (Tensorflow, PyTorch, FastAPI), Javascript (React, Express), AWS
+              </p>
             </div>
           </div>
         </section>
