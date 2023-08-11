@@ -12,10 +12,6 @@ const IndexPage = ({
     allMarkdownRemark: { edges },
   },
 }) => {
-  const Posts = edges
-    .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
-    .map(edge => <PostLink key={edge.node.id} post={edge.node} />)
-
   return (
     <Layout>
       <Header />
@@ -23,7 +19,13 @@ const IndexPage = ({
         <section id="main" className="wrapper">
           <div className="inner">
             <h1 className="major">Blog</h1>
-            <div>{Posts}</div>
+            <div>
+              {edges.map((edge) => {
+                return (
+                  <PostLink key={edge.node.id} post={edge.node} />
+                )
+              })}
+            </div>
           </div>
         </section>
       </div>

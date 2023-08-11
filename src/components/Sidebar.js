@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'gatsby';
 import Scrollspy from 'react-scrollspy';
 import Scroll from './Scroll';
 

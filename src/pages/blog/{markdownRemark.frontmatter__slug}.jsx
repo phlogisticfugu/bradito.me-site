@@ -16,7 +16,9 @@ export default function BlogPostTemplate({
       <div id="wrapper">
         <section id="main" className="wrapper">
           <div className="inner">
-            <h1 className="major">{frontmatter.title}</h1>
+            <h2>
+              {frontmatter.title}
+            </h2>
             <h4>{frontmatter.date} - Brad Ito</h4>
             <div
               dangerouslySetInnerHTML={{ __html: html }}
