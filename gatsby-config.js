@@ -17,6 +17,13 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'content',
+        path: `${__dirname}/src/content/`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
         trackingIds: [
@@ -27,6 +34,7 @@ module.exports = {
         }
       }
     },
+    'gatsby-transformer-remark',
     'gatsby-plugin-sass',
     'gatsby-plugin-offline',
   ],

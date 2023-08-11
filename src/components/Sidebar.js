@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'gatsby';
 import Scrollspy from 'react-scrollspy';
 import Scroll from './Scroll';
 
@@ -7,15 +8,19 @@ export class Sidebar extends Component {
     super(props);
     this.state = {
       tabs: [
-        { content: 'Welcome', href: 'intro' },
-        { content: 'Professional', href: 'one' },
-        { content: 'Community', href: 'two' }
+        { content: 'Welcome', anchor: 'intro' },
+        { content: 'Professional', anchor: 'one' },
+        { content: 'Community', anchor: 'two' }
       ],
+      links: [
+        { content: 'Blog', to: '/blog' },
+      ]
     };
   }
 
   render() {
-    const { tabs } = this.state;
+    const { tabs, links } = this.state;
+    console.log({ links })
     return (
       <section id="sidebar">
         <div className="inner">
@@ -26,15 +31,21 @@ export class Sidebar extends Component {
               offset={-300}
             >
               {tabs.map((tab, i) => {
-                const { href, content } = tab;
                 return (
-                  <li key={href}>
-                    <Scroll type="id" element={href}>
-                      <a href={`#${href}`}>{content}</a>
+                  <li key={tab.anchor}>
+                    <Scroll type="id" element={tab.anchor}>
+                      <a href={`#${tab.anchor}`}>{tab.content}</a>
                     </Scroll>
                   </li>
                 );
               })}
+              {links.map((link, i) => {
+              return (
+                <li key={`link-${link.content}`}>
+                  <Link to={link.to}>{link.content}</Link>
+                </li>
+              );
+            })}
             </Scrollspy>
           </nav>
         </div>
