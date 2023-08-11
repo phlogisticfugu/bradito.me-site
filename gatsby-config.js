@@ -7,8 +7,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'Hyperspace',
-        short_name: 'starter',
+        name: 'Brad Ito - personal site',
+        short_name: 'brad-ito',
         start_url: '/',
         background_color: '#663399',
         theme_color: '#663399',
