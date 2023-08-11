@@ -1,21 +1,31 @@
 import * as React from "react"
 import { graphql } from "gatsby"
 
+import Layout from '../../components/layout';
+import Footer from '../../components/Footer';
+import Header from '../../components/Header';
+
 export default function BlogPostTemplate({
   data, // this prop will be injected by the GraphQL query below.
 }) {
   const { markdownRemark } = data // data.markdownRemark holds your post data
   const { frontmatter, html } = markdownRemark
   return (
-    <div>
-      <div>
-        <h1>{frontmatter.title}</h1>
-        <h2>{frontmatter.date}</h2>
-        <div
-          dangerouslySetInnerHTML={{ __html: html }}
-        />
+    <Layout>
+      <Header />
+      <div id="wrapper">
+        <section id="main" className="wrapper">
+          <div className="inner">
+            <h1 className="major">{frontmatter.title}</h1>
+            <h4>{frontmatter.date} - Brad Ito</h4>
+            <div
+              dangerouslySetInnerHTML={{ __html: html }}
+            />
+          </div>
+        </section>
       </div>
-    </div>
+      <Footer />
+    </Layout>
   )
 }
 
