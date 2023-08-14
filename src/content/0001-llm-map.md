@@ -8,7 +8,7 @@ status: "published"
 ---
 
 I've been catching up on the latest developments in Large Language Models (LLMs)
-and find visual maps useful when learning.  So I made a 
+and I like to use visual maps.  So I made a 
 [data-driven dynamic LLM lineage map](https://phlogisticfugu.github.io/phlogistic-llm-map/)
 ([source code](https://github.com/phlogisticfugu/phlogistic-llm-map))
 to suit my needs.  Hopefully, you find it useful too:
@@ -22,7 +22,7 @@ visualizations that others have done.  The reasons I made my own are:
 
 - Be data-driven.  As more new models come out, or corrections are made I want a visualization that automatically adapts to change.
 - Link to the source.  To serve as a map to learning, navigation is essential.
-- Visualize data richly.  Multiple properties of each model are shown in the same image.
+- Visualize data densely.  Many properties of each model are shown in the same image.
 
 ## Build - Data
 
@@ -40,13 +40,13 @@ It quickly became clear that I needed some working criteria for what it takes to
 - Models that directly led to one of the above major models (referenced in the paper on the major model)
 - X-factor: Models/papers that I found interesting
 
-As in any data science work, I had to deal with unclean data.  Here's some of what I did to try to make this as clean as reasonably possible:
+As in any data science work, I had to deal with unclean data.  Here's some of what I did to try to make this as clean as possible:
 
-- Use preprint ([arXiv](https://arxiv.org/)) URLs used as the "authoritative" paper where available, otherwise fallback to blog URLs. This space is moving quickly, so not all papers have been published in peer-reviewed journals, and many of the recent models seem to not bother with formal papers at all.
+- Use preprint ([arXiv](https://arxiv.org/)) URLs used as the "authoritative" paper where available, otherwise fallback to blog URLs. Because this space is moving quickly, not all papers have been published in peer-reviewed journals, and many of the recent models seem to not bother with formal papers at all.
 - Use the "first submission date" as the date of the model.  That is when the preprint paper was first submitted, or a blog post was first made about a new model.  This is an attempt to get to a standard date for when a model was intentionally publicized.
 - Show model lineage based on explicit references by model authors.  Take an educated guess for others.
 
-I then collected all of this data in a [CSV file](https://github.com/phlogisticfugu/phlogistic-llm-map/blob/main/models.csv) in my git repo.
+I then collected this data in a [CSV file](https://github.com/phlogisticfugu/phlogistic-llm-map/blob/main/models.csv) in my git repo.
 
 ## Build - Visualization
 
@@ -68,9 +68,9 @@ D3.js is powerful, but it can also be a bit unintuitive and complicated to use. 
 I used two LLMs: [Github Copilot](https://github.com/features/copilot) and the OpenAI ChatGPT Code Interpreter.  I found that the best way to use their strengths
 and avoid their weaknesses was to do the following:
 
-- Ask ChatGPT how to implement a given step (giving it the current code each time) using technical language, then implement ChatGPT's code changes in Visual Studio Code
+- Ask ChatGPT how to implement a given step (giving it the current code each time) using technical language.  Then implement ChatGPT's code changes in Visual Studio Code
 - Use Copilot autocomplete to assist in refactors and tweaking the visualization - while of course only using sensible code suggestions made by Copilot
-- Implement many small steps.  At each step use Google (still useful) to understand the code being suggested by ChatGPT. This kept each change I made "stable" and permitted "continuous refactoring" as part of keeping the code clean and easily interpretable by the next round of ChatGPT changes. Also, on a few occasions, ChatGPT output code that ended up implementing a bug, and having clean code helped me to debug those issues.
+- Take many small steps, evaluating the visualization along the way.  At each step use Google (still useful) to understand the code being suggested by ChatGPT. This kept each change I made "stable" and permitted "continuous refactoring" as part of keeping the code clean and easily interpretable by the next round of ChatGPT changes. Also, on a few occasions, ChatGPT output code that ended up implementing a bug, and having clean code helped me to debug those issues.
 
 The result is a visualization that implements a [D3.js force simulation](https://d3js.org/d3-force/simulation) to move nodes representing each model into the right location on the visualization according to the rules (forces) specified in the code.  I also implemented colors for each publisher, larger nodes corresponding to larger numbers of citations, wider links to
 represent major branches, links to source materials about a given model, and hover tooltip information for each node.
