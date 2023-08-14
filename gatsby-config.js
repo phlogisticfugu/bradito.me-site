@@ -14,6 +14,7 @@ module.exports = {
         theme_color: '#663399',
         display: 'standalone',
         icon: 'src/assets/img/website-icon.png', // This path is relative to the root of the site.
+        cache_busting_mode: 'none',
       },
     },
     {
@@ -51,6 +52,13 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     'gatsby-plugin-sass',
-    'gatsby-plugin-offline',
+    {
+      resolve: 'gatsby-plugin-offline',
+      options: { // https://www.npmjs.com/package/gatsby-plugin-manifest
+         workboxConfig: {
+            globPatterns: ['**/icon-path*']
+         }
+      }
+    },
   ],
 };
