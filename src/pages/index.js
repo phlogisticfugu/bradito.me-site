@@ -114,6 +114,9 @@ const IndexPage = () => (
                 and non-profits.  PCI Compliant platform.  Hybrid onshore/offshore team.
               </p>
               <p>
+                Company was successfully acquired by <a href="https://www.ruffalonl.com/">Ruffalo Noel Levitz</a>.
+              </p>
+              <p>
                 Tech: Python (Pyramid, SQLAlchemy), Javascript (AngularJS), AWS
               </p>
             </div>
@@ -125,7 +128,7 @@ const IndexPage = () => (
               <h2>Walla Media - VP of Technology</h2>
               <p>
                 Architected innovative technology solutions and built/led combined
-                onshore and offshore development team for this fast- moving online
+                onshore and offshore development team for this fast- moving profitable online
                 marketing company with nearly $1M in monthly revenue and over 1M page
                 visits a day. Enabled multiple business pivots with modular, reliable
                 systems and platforms.
@@ -155,6 +158,20 @@ const IndexPage = () => (
               </p>
               <p>
                 Tech: Java (J2EE), PHP, Javascript, MySQL
+              </p>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div className="content">
+            <div className="inner">
+              <h2>MIT TEAL Program - Research Assistant</h2>
+              <p>
+                MIT Technology Enabled Active Learning (TEAL) was a pilot program at the time, but is now the standard way that MIT teaches introductory physics.
+                Developed novel simulations and visualizations of electromagnetic fields and waves for use in the TEAL classroom.
+              </p>
+              <p>
+                Tech: Java, 3D Studio Max
               </p>
             </div>
           </div>
