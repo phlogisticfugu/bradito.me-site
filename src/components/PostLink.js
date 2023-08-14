@@ -6,8 +6,8 @@ const PostLink = ({ post }) => (
     <h4>
       <Link to={"/blog" + post.frontmatter.slug}>
         {post.frontmatter.title}
+        - {post.frontmatter.date}
       </Link>
-      - {post.frontmatter.date}
     </h4>
     <p>
       {post.excerpt}
