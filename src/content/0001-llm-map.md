@@ -1,5 +1,5 @@
 ---
-slug: "/llm-map"
+slug: "llm-map"
 date: "2023-08-11"
 title: "Building a useful map of modern LLMs"
 og_description: "A data-driven linage visualization of Large Language Models, written in an AI-assisted manner using D3.js"

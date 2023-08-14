@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 const PostLink = ({ post }) => (
   <div>
     <h4>
-      <Link to={"/blog" + post.frontmatter.slug}>
+      <Link to={"/blog/" + post.frontmatter.slug}>
         {post.frontmatter.title}
         - {post.frontmatter.date}
       </Link>

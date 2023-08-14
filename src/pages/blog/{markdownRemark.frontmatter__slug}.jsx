@@ -21,7 +21,7 @@ export default function BlogPostTemplate({
             { name: 'og:title', content: frontmatter.title },
             { name: 'og:description', content: frontmatter.og_description },
             { name: 'og:image', content: frontmatter.og_image },
-            { name: 'og:url', content: 'https://bradito.me/blog' + frontmatter.slug + '/' },
+            { name: 'og:url', content: 'https://bradito.me/blog/' + frontmatter.slug + '/' },
             { name: 'og:type', content: 'article' },
           ]}
         ></Helmet>
