@@ -1,14 +1,14 @@
 {
-  "name": "gatsby-starter-hyperspace",
-  "version": "0.0.1",
-  "description": "Gatsby.js V2 starter template based on Hyperspace by HTML5 UP",
+  "name": "bradito.me-site",
+  "version": "0.1.0",
+  "description": "Personal website for Brad Ito",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/anubhavsrivastava/gatsby-starter-hyperspace.git"
+    "url": "git+https://github.com/phlogisticfugu/bradito.me-site.git"
   },
   "author": {
-    "name": "Anubhav Srivastava",
-    "email": "anubhav.srivastava00@gmail.com"
+    "name": "Brad Ito",
+    "email": "brad@bradito.me"
   },
   "dependencies": {
     "gatsby": "^5.11.0",
