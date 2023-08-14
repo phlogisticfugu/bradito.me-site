@@ -12,7 +12,7 @@
 
 			@include breakpoint('<=large') {
 				margin-left: 0;
-				padding-top: _size(sidebar-height);
+				//padding-top: _size(sidebar-height);
 			}
 
 			@include breakpoint('<=small') {

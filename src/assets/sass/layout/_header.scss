@@ -10,7 +10,10 @@
   @include vendor('display', 'flex');
   background-color: _palette(accent1);
   cursor: default;
-  padding: 1.75em 2em;
+  position: sticky;
+  top: 0px;
+  z-index: _misc(z-index-base);
+  padding: 1em 2em;
 
   > .title {
     border: 0;
