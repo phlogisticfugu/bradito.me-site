@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "gatsby";
 
 import Layout from '../components/layout';
 import Footer from '../components/Footer';
@@ -61,6 +62,11 @@ const IndexPage = () => (
               </p>
               <h4>Technical Blog Posts</h4>
               <ul>
+                <li>
+                  <Link to="/blog/llm-map/">
+                    Building a useful map of modern LLMs
+                  </Link>
+                </li>
                 <li><a href="https://retina.ai/blog/marketing-data-checklist/">Marketing Data Checklist</a></li>
                 <li><a href="https://retina.ai/blog/7-ways-machine-learning-projects-fail/">7 Ways Machine Learning Projects Fail</a></li>
                 <li><a href="https://retina.ai/blog/dataops-principles/">DataOps Principles</a></li>
