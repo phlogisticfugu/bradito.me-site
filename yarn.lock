@@ -4586,6 +4586,32 @@ __metadata:
   languageName: node
   linkType: hard
 
+"bradito.me-site@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "bradito.me-site@workspace:."
+  dependencies:
+    gatsby: ^5.11.0
+    gatsby-plugin-google-gtag: ^5.11.0
+    gatsby-plugin-image: ^3.11.0
+    gatsby-plugin-manifest: ^5.11.0
+    gatsby-plugin-offline: ^6.11.0
+    gatsby-plugin-sass: ^6.11.0
+    gatsby-plugin-sharp: ^5.11.0
+    gatsby-remark-images: ^7.11.0
+    gatsby-source-filesystem: ^5.11.0
+    gatsby-transformer-remark: ^6.11.0
+    gatsby-transformer-sharp: ^5.11.0
+    gh-pages: ^5.0.0
+    node-sass: ^8.0.0
+    prettier: ^3.0.1
+    react: ^18.2.0
+    react-dom: ^18.2.0
+    react-scrollspy: ^3.4.3
+    rimraf: 5.0.1
+    smoothscroll-polyfill: ^0.4.4
+  languageName: unknown
+  linkType: soft
+
 "browserslist@npm:^4.0.0, browserslist@npm:^4.14.5, browserslist@npm:^4.18.1, browserslist@npm:^4.21.4, browserslist@npm:^4.21.5, browserslist@npm:^4.21.7, browserslist@npm:^4.21.9, browserslist@npm:^4.6.6":
   version: 4.21.10
   resolution: "browserslist@npm:4.21.10"
@@ -7914,32 +7940,6 @@ __metadata:
   checksum: f697e2012c4d56764388a62ff26a97de33bae2d0085043f43cb904b0d8f24ed0a18b5559e5b71fc8c31f6198a73c421484e6d4fdda40d41f45675bc4a1596870
   languageName: node
   linkType: hard
-
-"gatsby-starter-hyperspace@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "gatsby-starter-hyperspace@workspace:."
-  dependencies:
-    gatsby: ^5.11.0
-    gatsby-plugin-google-gtag: ^5.11.0
-    gatsby-plugin-image: ^3.11.0
-    gatsby-plugin-manifest: ^5.11.0
-    gatsby-plugin-offline: ^6.11.0
-    gatsby-plugin-sass: ^6.11.0
-    gatsby-plugin-sharp: ^5.11.0
-    gatsby-remark-images: ^7.11.0
-    gatsby-source-filesystem: ^5.11.0
-    gatsby-transformer-remark: ^6.11.0
-    gatsby-transformer-sharp: ^5.11.0
-    gh-pages: ^5.0.0
-    node-sass: ^8.0.0
-    prettier: ^3.0.1
-    react: ^18.2.0
-    react-dom: ^18.2.0
-    react-scrollspy: ^3.4.3
-    rimraf: 5.0.1
-    smoothscroll-polyfill: ^0.4.4
-  languageName: unknown
-  linkType: soft
 
 "gatsby-telemetry@npm:^4.11.0":
   version: 4.11.0
