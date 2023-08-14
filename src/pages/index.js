@@ -46,15 +46,17 @@ const IndexPage = () => (
               </li>
             </ul>
           </h2>
-          <ul className="actions">
-            <li>
-              <Scroll type="id" element="one">
+          <div>
+          <Scroll type="id" element="one">
                 <a href="#one" className="button">
                   Learn more
                 </a>
               </Scroll>
-            </li>
-          </ul>
+              &nbsp;&nbsp;&nbsp;
+              <Link to="/blog/" className="button">
+                Blog
+              </Link>
+          </div>
         </div>
       </section>
 
