@@ -15,7 +15,7 @@
 and find visual maps useful when learning.  So I made a
 <a href="https://phlogisticfugu.github.io/phlogistic-llm-map/">data-driven dynamic LLM lineage map</a>
 (<a href="https://github.com/phlogisticfugu/phlogistic-llm-map">source code</a>)
-to suit my needs.  Hopefully you find it useful too:</p>
+to suit my needs.  Hopefully, you find it useful too:</p>
 <p><a href="https://phlogisticfugu.github.io/phlogistic-llm-map/"><span
       class="gatsby-resp-image-wrapper"
       style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
@@ -41,44 +41,44 @@ to suit my needs.  Hopefully you find it useful too:</p>
         decoding="async"
       />
     </span></a></p>
-<p>While I do love to build things, I love to build things that provide useful value more. So I first took a look at
+<p>While I do love to build things, I love to build things that provide useful value even more. So I first took a look at
 <a href="https://arxiv.org/abs/2303.18223">some</a> of the
 <a href="https://github.com/Mooler0410/LLMsPracticalGuide">existing</a>
 visualizations that others have done.  The reasons I made my own are:</p>
 <ul>
 <li>Be data-driven.  As more new models come out, or corrections are made I want a visualization that automatically adapts to change.</li>
 <li>Link to the source.  To serve as a map to learning, navigation is essential.</li>
-<li>Visualize data richly.  Multiple properties about each model are shown in the same image.</li>
+<li>Visualize data richly.  Multiple properties of each model are shown in the same image.</li>
 </ul>
 <h2>Build - Data</h2>
-<p>To create this map, I first started with collecting data.  I started with some of the notes that I've been keeping on major
-breakthrough models, and their associated papers.  There are
+<p>To create this map, I first started by collecting data.  I started with some of the notes that I've been keeping on
+breakthrough models and their associated papers.  There are
 <a href="https://a16z.com/2023/05/25/ai-canon/#section--6">several</a>
 <a href="https://crfm.stanford.edu/helm/latest/">great</a>
-resources out there which list major models.  There were also some of the other visualizations used as a starting-point.</p>
+resources out there that list major models.  There were also some of the other visualizations used as a starting point.</p>
 <p>It quickly became clear that I needed some working criteria for what it takes to be a major model:</p>
 <ul>
 <li>Large Language Model - Deep learning transformer language models big enough to show <a href="https://arxiv.org/abs/2206.07682">emergent abilities</a></li>
 <li>Models used in a paper with a lot of citations</li>
 <li>Models that have gotten a lot of LLM buzz (a web search turns up a ton of results)</li>
-<li>Models that directly led to one of the above major models (referenced in the paper of the major model)</li>
+<li>Models that directly led to one of the above major models (referenced in the paper on the major model)</li>
 <li>X-factor: Models/papers that I found interesting</li>
 </ul>
 <p>As in any data science work, I had to deal with unclean data.  Here's some of what I did to try to make this as clean as reasonably possible:</p>
 <ul>
-<li>Use preprint (<a href="https://arxiv.org/">arXiv</a>) URLs used as the "authoritative" paper where available, fallback to blog URLs. This space is moving quickly, so not all papers have been published in a peer-reviewed journal, and many of the recent models seem to not bother with formal papers at all.</li>
-<li>Use the "first submission date" as the date of the model.  That is when the preprint paper was first submitted, or a blog post first made about a new model.  This is an attempt to get to a standard date for when a model was intentionally publicized.</li>
+<li>Use preprint (<a href="https://arxiv.org/">arXiv</a>) URLs used as the "authoritative" paper where available, otherwise fallback to blog URLs. This space is moving quickly, so not all papers have been published in peer-reviewed journals, and many of the recent models seem to not bother with formal papers at all.</li>
+<li>Use the "first submission date" as the date of the model.  That is when the preprint paper was first submitted, or a blog post was first made about a new model.  This is an attempt to get to a standard date for when a model was intentionally publicized.</li>
 <li>Show model lineage based on explicit references by model authors.  Take an educated guess for others.</li>
 </ul>
 <p>I then collected all of this data in a <a href="https://github.com/phlogisticfugu/phlogistic-llm-map/blob/main/models.csv">CSV file</a> in my git repo.</p>
 <h2>Build - Visualization</h2>
-<p>I wanted a map which shows:</p>
+<p>I wanted a map that shows:</p>
 <ul>
-<li>Model lineage - The story of modern LLMs is one of relatively open inspiration, and competition.  When a new breakthrough is made that shows improved performance, it inspires and informs new models.</li>
+<li>Model lineage - The story of modern LLMs is one of relatively open inspiration, and competition.  When a new model is made that shows improved performance, it inspires and informs new models.</li>
 <li>Chronology - The timeline of when various models were released is an important part of the story.</li>
 <li>Influence - Some models are a "bigger deal" than others - and I try to use Google Scholar citations as a proxy for that.</li>
 </ul>
-<p>As a polyglot full stack web developer / data scientist, I've
+<p>As a polyglot full-stack web developer and data scientist, I've
 <a href="https://ggplot2.tidyverse.org/">built</a>
 <a href="https://plotly.com/javascript/">many</a>
 <a href="https://www.highcharts.com/demo">data</a>
@@ -91,17 +91,17 @@ and avoid their weaknesses was to do the following:</p>
 <ul>
 <li>Ask ChatGPT how to implement a given step (giving it the current code each time) using technical language, then implement ChatGPT's code changes in Visual Studio Code</li>
 <li>Use Copilot autocomplete to assist in refactors and tweaking the visualization - while of course only using sensible code suggestions made by Copilot</li>
-<li>Implement many small steps, ensuring that I knew what I was implemented by using Google (still useful) to lookup the API that ChatGPT was implemnenting for me.  This kept each change I made "stable" and permitted "continuous refactoring" as part of keeping the code clean and easily interpretable by the next round of ChatGPT changes.  Also, one a few occasions, ChatGPT output code that ended up implementing a bug, and having clean code helped me to debug those issues.</li>
+<li>Implement many small steps.  At each step use Google (still useful) to understand the code being suggested by ChatGPT. This kept each change I made "stable" and permitted "continuous refactoring" as part of keeping the code clean and easily interpretable by the next round of ChatGPT changes. Also, on a few occasions, ChatGPT output code that ended up implementing a bug, and having clean code helped me to debug those issues.</li>
 </ul>
-<p>The result is a visualization that implements a <a href="https://d3js.org/d3-force/simulation">D3.js force simulation</a> to move nodes representing each model into the right location on the visualization according to rules (forces) specified in the code.  I also implemented colors for each publisher, larger nodes corresponding to large number of citations, wider links to
+<p>The result is a visualization that implements a <a href="https://d3js.org/d3-force/simulation">D3.js force simulation</a> to move nodes representing each model into the right location on the visualization according to the rules (forces) specified in the code.  I also implemented colors for each publisher, larger nodes corresponding to larger numbers of citations, wider links to
 represent major branches, links to source materials about a given model, and hover tooltip information for each node.</p>
 <h2>Share</h2>
 <p>With this blog post, I am releasing "v1" of this visualization to all who may find it useful.  I intend on keeping this up to date with new models as they come out.  If anyone has any
 corrections or suggested changes, the data and the visualization are open source, and contributions are welcome.</p>
-<p>Hopefully you can also use this map to learn about and be inspired by new LLMs, and all the people who make them.</p></div></div></section></div><footer id="footer" class="wrapper style1-alt"><div class="inner"><ul class="menu"><li>© 2023. All rights reserved.</li><li>Design template: <a href="http://html5up.net">HTML5 UP</a></li></ul></div></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/blog/llm-map/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+<p>Hopefully, you can also use this map to learn about and be inspired by new LLMs, and all the people who make them.</p></div></div></section></div><footer id="footer" class="wrapper style1-alt"><div class="inner"><ul class="menu"><li>© 2023. All rights reserved.</li><li>Design template: <a href="http://html5up.net">HTML5 UP</a></li></ul></div></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/blog/llm-map/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-7dd29fdd0180e78db80a.js\"],\"component---cache-caches-gatsby-plugin-offline-app-shell-js\":[\"/component---cache-caches-gatsby-plugin-offline-app-shell-js-677d5d1efc199fdca155.js\"],\"component---src-pages-404-js\":[\"/component---src-pages-404-js-c6bdc1d6f38102c5bf37.js\"],\"component---src-pages-blog-index-jsx\":[\"/component---src-pages-blog-index-jsx-cc25bf5319b2821c78c2.js\"],\"component---src-pages-blog-markdown-remark-frontmatter-slug-jsx\":[\"/component---src-pages-blog-markdown-remark-frontmatter-slug-jsx-938bf5adf14ae08b5e42.js\"],\"component---src-pages-elements-js\":[\"/component---src-pages-elements-js-84707359b153ae1677ed.js\"],\"component---src-pages-generic-js\":[\"/component---src-pages-generic-js-bb55f675f2c471f7b6b0.js\"],\"component---src-pages-index-js\":[\"/component---src-pages-index-js-829e2cc695afa70fb893.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-7dd29fdd0180e78db80a.js\"],\"component---cache-caches-gatsby-plugin-offline-app-shell-js\":[\"/component---cache-caches-gatsby-plugin-offline-app-shell-js-677d5d1efc199fdca155.js\"],\"component---src-pages-404-js\":[\"/component---src-pages-404-js-98112f4eeb8c6d997acc.js\"],\"component---src-pages-blog-index-jsx\":[\"/component---src-pages-blog-index-jsx-f75a6ffca8bbbaf6b005.js\"],\"component---src-pages-blog-markdown-remark-frontmatter-slug-jsx\":[\"/component---src-pages-blog-markdown-remark-frontmatter-slug-jsx-a66101732540198eec01.js\"],\"component---src-pages-elements-js\":[\"/component---src-pages-elements-js-d26de1c67a2908fd1d7c.js\"],\"component---src-pages-generic-js\":[\"/component---src-pages-generic-js-36270b15422d63d23754.js\"],\"component---src-pages-index-js\":[\"/component---src-pages-index-js-1e716bc0ffebde3de220.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="35dbb42cf5a6bb6effcf";</script><script src="/webpack-runtime-ded89b6eb23e7e6d1ef9.js" async></script><script src="/framework-c417277933662a499701.js" async></script><script src="/app-7dd29fdd0180e78db80a.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="c8835c43887c1b1e7144";</script><script src="/webpack-runtime-9d41622642d24eb4566b.js" async></script><script src="/framework-c417277933662a499701.js" async></script><script src="/app-7dd29fdd0180e78db80a.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
