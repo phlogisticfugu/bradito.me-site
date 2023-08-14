@@ -7,6 +7,17 @@ import Sidebar from '../components/Sidebar';
 import Scroll from '../components/Scroll';
 import Header from '../components/Header';
 
+export const Head = () => (
+  <>
+    <title>Brad Ito - personal site</title>
+    <meta name="keywords" content="site, web, development, brad, ito, bradito, bradito.me" />
+    <meta name="description" content="Brad Ito - personal site" />
+    <meta name="og:title" content="Brad Ito - personal site" />
+    <meta name="og:url" content="https://bradito.me" />
+    <meta name="og:type" content="website" />
+  </>
+)
+
 const IndexPage = () => (
   <Layout>
     <Header />
