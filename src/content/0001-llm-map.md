@@ -24,6 +24,15 @@ visualizations that others have done.  The reasons I made my own are:
 - Link to the source.  To serve as a map to learning, navigation is essential.
 - Visualize data densely.  Many properties of each model are shown in the same image.
 
+## Some Takeaways
+
+Maps surface patterns which might otherwise be difficult to see.  In this case, some of the things I noticed are:
+
+- There's two main branches of LLMs: decoder-only and encoder-decoder model architectures
+- Google / Google Brain created this world, and it really is theirs to lose.
+- The latest models are not bothering with academic papers, and are using training data as a primary differentiator.
+- Models free for commercial use (bold circles) continue to be made, mostly by companies hoping to profit from services for model training or inference.
+
 ## Build - Data
 
 To create this map, I first started by collecting data.  I started with some of the notes that I've been keeping on
