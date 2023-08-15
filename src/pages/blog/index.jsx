@@ -28,7 +28,12 @@ const IndexPage = ({
       <div id="wrapper">
         <section id="main" className="wrapper">
           <div className="inner">
-            <h1 className="major">Blog</h1>
+            <h1 className="major">
+              Brad's Blog
+            </h1>
+            <p>
+              <em>Thoughts on technology: applications, techniques and impact</em>
+            </p>
             <div>
               {edges.map((edge) => {
                 return (
