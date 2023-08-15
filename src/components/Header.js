@@ -1,23 +1,19 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import '../assets/sass/main.scss';
-
-const Header = () => {
-  const currentPathname = window?.location?.pathname || "";
-  return (
+const Header = () => (
   <header id="header">
     <nav>
       <ul>
         <li>
-          <Link to="/" className={"/" === currentPathname ? "active": ""}>Main</Link>
+          <Link to="/">Main</Link>
         </li>
         <li>
-          <Link to="/blog/" className={currentPathname.startsWith("/blog/") ? "active": ""}>Blog</Link>
+          <Link to="/blog/">Blog</Link>
         </li>
       </ul>
     </nav>
   </header>
-  );
-}
+);
 
 export default Header;
