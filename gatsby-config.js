@@ -5,19 +5,6 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: 'Brad Ito - personal site',
-        short_name: 'brad-ito',
-        start_url: '/',
-        background_color: '#663399',
-        theme_color: '#663399',
-        display: 'standalone',
-        icon: 'src/assets/img/website-icon.png', // This path is relative to the root of the site.
-        cache_busting_mode: 'none',
-      },
-    },
-    {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'content',
