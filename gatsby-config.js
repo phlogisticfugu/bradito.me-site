@@ -39,13 +39,6 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     'gatsby-plugin-sass',
-    {
-      resolve: 'gatsby-plugin-offline',
-      options: { // https://www.npmjs.com/package/gatsby-plugin-manifest
-         workboxConfig: {
-            globPatterns: ['**/icon-path*']
-         }
-      }
-    },
+    'gatsby-plugin-offline',
   ],
 };
