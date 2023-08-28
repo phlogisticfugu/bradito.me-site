@@ -12,6 +12,19 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: 'bradito.me - personal site of Brad Ito',
+        short_name: 'bradito.me',
+        start_url: '/',
+        background_color: '#663399',
+        theme_color: '#663399',
+        display: 'standalone',
+        icon: 'src/assets/img/website-icon.png', // This path is relative to the root of the site.
+        cache_busting_mode: 'none',
+      },
+    },
+    {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
         trackingIds: [
@@ -39,6 +52,13 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     'gatsby-plugin-sass',
-    'gatsby-plugin-offline',
+    {
+      resolve: 'gatsby-plugin-offline',
+      options: { // https://www.npmjs.com/package/gatsby-plugin-manifest
+         workboxConfig: {
+            globPatterns: ['**/icon-path*']
+         }
+      }
+    },
   ],
 };
