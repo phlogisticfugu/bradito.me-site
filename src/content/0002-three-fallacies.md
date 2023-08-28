@@ -32,5 +32,8 @@ will be killed by "inference on the edge":
 - ONNX, mac=CoreML or llama.cpp/ggml, Apache TVM
 - https://mlc.ai/mlc-llm/
 
+2. You need a vector database
+
+3. Langchain is the future
 
 
