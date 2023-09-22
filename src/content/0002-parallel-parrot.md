@@ -46,7 +46,7 @@ We've found that as one gets to more advanced use-cases, that the outputs that y
 - Identifying corporate entities in a document, and the role for each of them in the document (vendor, client, etc)
 
 For this one can leverage two features provided by modern LLM APIs:
-- structured output prompting: For OpenAI, this is the ("function calling")[https://platform.openai.com/docs/guides/gpt/chat-completions-api] feature, but really it is about modifying the prompt to request multiple outputs, formatted in a manner that is machine-readable (JSON)
+- structured output prompting: For OpenAI, this is the ["function calling"](https://platform.openai.com/docs/guides/gpt/chat-completions-api) feature, but really it is about modifying the prompt to request multiple outputs, formatted in a manner that is machine-readable (JSON)
 - the number of "choices" to create in an output (`n`).  This can be useful for leveraging the "creativity" of an LLM efficiently.  Process the same inputs, but ask the LLM to generate multiple outputs with random variations
 
 ![Structured LLM output](./0002-parallel-parrot-2.drawio.png)
