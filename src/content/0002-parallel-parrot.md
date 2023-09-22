@@ -4,7 +4,7 @@ date: "2023-09-26"
 title: "Generating data from LLMs at scale: parallel-parrot"
 og_description: "Generating data from LLMs at scale: parallel-parrot"
 og_image: ""
-status: "published"
+status: "draft"
 ---
 
 One of the surprising and exciting use-cases for Large Language Models (LLMs) is that they can be used to automate
