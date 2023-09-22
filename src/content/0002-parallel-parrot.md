@@ -1,10 +1,10 @@
 ---
 slug: "parallel-parrot"
-date: "2023-09-26"
+date: "2023-09-22"
 title: "Generating data from LLMs at scale: parallel-parrot"
 og_description: "Generating data from LLMs at scale: parallel-parrot"
-og_image: ""
-status: "draft"
+og_image: "https://res.cloudinary.com/dn7sohze7/image/upload/v1695421900/parallel-parrot/0002-gareth-davies-EGcfyDiUv58-unsplash.jpg"
+status: "published"
 ---
 
 One of the surprising and exciting use-cases for Large Language Models (LLMs) is that they can be used to automate
