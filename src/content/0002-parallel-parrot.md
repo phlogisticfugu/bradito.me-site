@@ -2,7 +2,7 @@
 slug: "parallel-parrot"
 date: "2023-09-22"
 title: "Generating data from LLMs at scale: parallel-parrot"
-og_description: "Generating data from LLMs at scale: parallel-parrot"
+og_description: "Wrangling a flock of LLMs for speed, fun, and profit"
 og_image: "https://res.cloudinary.com/dn7sohze7/image/upload/v1695421900/parallel-parrot/0002-gareth-davies-EGcfyDiUv58-unsplash.jpg"
 status: "published"
 ---
