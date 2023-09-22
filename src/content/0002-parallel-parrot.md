@@ -62,22 +62,51 @@ Only output questions and answers clearly described in the document.
 document: ${text}
 ```
 
-This could turn a generic technical document into a list of question and answer pairs.  This in turn could make the content in the original document easier to search for (match searches to the questions) and easier to digest (just show the answers in bullet form).
+This uses the LLM to turn a generic technical document into a list of question and answer pairs.  This in turn could make the content in the original document easier to search for (match searches to the questions) and easier to digest (just show the answers in bullet form).
+
+This could turn a [wikipedia page about George Washington](https://en.wikipedia.org/wiki/George_Washington) into a list of question/answer pairs:
+
+```json
+[
+  {
+    "question": "Who was the first president of the United States?",
+    "answer": "George Washington"
+  },
+  {
+    "question": "What position did George Washington hold during the American Revolutionary War?",
+    "answer": "Commander of the Continental Army"
+  },
+  {
+    "question": "What document did George Washington help draft and ratify?",
+    "answer": "The Constitution of the United States"
+  },
+]
+```
 
 ## Scale
 
-All of the above is great and useful, however things can get tricky when you try to scale.  A single response to a decently complicated prompt could take 30 seconds.  That means processing a thousand documents one after the other could take over 8 hours.  Things quickly get out of hand from there.
+All of the above is great and useful, however things can get tricky when you try to scale.  A single response to a decently complicated prompt could take up to 30 seconds.  That means processing a thousand documents one after the other (in series) could take over 8 hours.
 
-To help with this, we created a python package: [parallel-parrot](https://pypi.org/project/parallel-parrot/) that operates on structured pandas dataframes to leverage the power of LLMs, without having to mess with the HTTP API's and concurrency.
+To help with this, we created a python package: [parallel-parrot](https://pypi.org/project/parallel-parrot/) that makes LLM calls in parallel, without having to worry about concurrency, retries, API throttling, and other related issues.  Parallelization can accomplish the same 8+ hour task in minutes.
 
-If you squint at the above diagram you can see that it easily maps to dataframes.  The input and context can map to input columns, and the output keys can map to output columns.  The one-to-many relationship with one input generating multiple outputs can be expressed as an "exploded" dataframe, which repeats some of the inputs, for re-grouping or filtering.
+Series vs Parallel:
+![LLM Map](./0002-parallel-parrot-3.drawio.png)
 
-For the parallelization side, the package uses the high-performance [aiohttp](https://docs.aiohttp.org/en/stable/) with the same speedy I/O [libuv](https://libuv.org/) used in node.js (via [uvloop](https://github.com/MagicStack/uvloop)).  We also provide a utility function via our [asyncio-anywhere](https://pypi.org/project/asyncio-anywhere/) to make it easy to run this code in both scripts and notebooks.
-
-This package automatically:
-- takes in a pandas dataframe
+parallel-parrot automatically:
+- takes in a pandas dataframe or native Python list of dictionaries
 - applies a prompt template to create a prompt per row
-- queries an API-based LLM in parallel, with automatic retries and rate limiting
-- parses and dedupes the outputs from multiple choices, and JSON outputs
-- outputs a clean structured dataframe
+- queries an API-based LLM in parallel, handling automatic retries and rate limiting
+- parses and dedupes the outputs from multiple choices, and from JSON outputs
+- outputs clean ([exploded](https://towardsdatascience.com/why-and-how-to-explode-a-list-like-column-to-rows-in-pandas-b69c3391c01c/) / [tidy](https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html) ) data in the original format
 
+Under the hood, the package uses the high-performance [aiohttp](https://docs.aiohttp.org/en/stable/) package.  And uses the efficient I/O library [libuv](https://libuv.org/) via [uvloop](https://github.com/MagicStack/uvloop).  It also adapts to different connection timeouts and retries using best-practices such as exponential backoff with jitter.
+
+Depending on the API-based LLM you are using, some require time to "warm up" machines in the cloud, and others like OpenAI have [rate limits](https://platform.openai.com/docs/guides/rate-limits/rate-limits-in-headers) which can vary depending on account tier.  The package handles this by first making a "setup" request, which is then used to configure and optimize the following bulk parallel requests.  That initial request also makes it easier to debug show-stopper issues like invalid credentials or API downtime.
+
+![LLM Map](./0002-parallel-parrot-4.drawio.png)
+
+## Next Steps
+
+We're open sourcing this in the true spirit of open source: in the hopes that others find it useful as well.  Contributions and feedback are welcome, in the hopes that we can help each other unlock more of the value from this exciting new technology.
+
+Also, to meet the needs of clients who have come to us interested in effectively leveraging Generative AI for themselves, we just formalized a new company [Novex AI](https://novex.ai/) to help with that.
