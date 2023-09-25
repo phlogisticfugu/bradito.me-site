@@ -60,11 +60,41 @@ const IndexPage = () => (
         </div>
       </section>
 
+      <section id="zero" className="wrapper style3 spotlights">
+        <section>
+          <div className="content">
+            <div className="inner">
+              <h2><a href="https://novex.ai/">Novex AI</a> - CTO and Co-Founder</h2>
+              <p>
+                Lead technical execution of AI solutions for mid-sized companies.
+                Multiple projects effectively operationalizing machine learning and Generative AI.
+              </p>
+              <p>
+                Tech: Python, AWS, GCP, Azure, OpenAI, Databricks
+              </p>
+              <h4>Technical Blog Posts</h4>
+              <ul>
+                <li>
+                  <Link to="/blog/parallel-parrot/">
+                    Accelerating LLM operations with parallel-parrot
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/blog/llm-map/">
+                    Building a useful map of modern LLMs
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </section>
+
       <section id="one" className="wrapper style2 spotlights">
         <section>
           <div className="content">
             <div className="inner">
-              <h2>Retina AI - CTO and Co-Founder</h2>
+              <h2><a href="https://retina.ai">Retina AI</a> - CTO and Co-Founder</h2>
               <p>
                 Lead engineering team for this venture-backed data science and machine learning <a href="https://retina.ai">company</a>.
                 Mutiple production web, dataops, big data, and data science products with a focus
@@ -75,11 +105,7 @@ const IndexPage = () => (
               </p>
               <h4>Technical Blog Posts</h4>
               <ul>
-                <li>
-                  <Link to="/blog/llm-map/">
-                    Building a useful map of modern LLMs
-                  </Link>
-                </li>
+                
                 <li><a href="https://retina.ai/blog/marketing-data-checklist/">Marketing Data Checklist</a></li>
                 <li><a href="https://retina.ai/blog/7-ways-machine-learning-projects-fail/">7 Ways Machine Learning Projects Fail</a></li>
                 <li><a href="https://retina.ai/blog/dataops-principles/">DataOps Principles</a></li>
