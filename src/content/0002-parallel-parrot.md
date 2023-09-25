@@ -1,31 +1,33 @@
 ---
 slug: "parallel-parrot"
-date: "2023-09-22"
-title: "Generating data from LLMs at scale: parallel-parrot"
+date: "2023-09-25"
+title: "Accelerating LLM operations with parallel-parrot"
 og_description: "Wrangling a flock of LLMs for speed, fun, and profit"
 og_image: "https://res.cloudinary.com/dn7sohze7/image/upload/v1695421900/parallel-parrot/0002-gareth-davies-EGcfyDiUv58-unsplash.jpg"
 status: "published"
 ---
 
-One of the surprising and exciting use-cases for Large Language Models (LLMs) is that they can be used to automate
-many tasks that can be described in words.  However, using LLMs to then scale that work hundreds or thousands of times
-can quickly become tedious and slow.  We've created a new Python package: [parallel-parrot](https://pypi.org/project/parallel-parrot/) which makes this process easy and robust.
+Large Language Models (LLMs) have revolutionized task automation, yet scaling these
+operations poses challenges in efficiency and reliability.
+We've developed [parallel-parrot](https://pypi.org/project/parallel-parrot/)
+, a Python package that parallelizes LLM tasks to boost performance and reliability.
 
 ![flock of parrots](./0002-gareth-davies-EGcfyDiUv58-unsplash.jpg)
 
 *Photo by [Gareth Davies](https://unsplash.com/@gdfoto?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
  on [Unsplash](https://unsplash.com/photos/EGcfyDiUv58?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)* 
 
-### The Task
+### Task Automation with Prompt Templates
 
-The most common way that people are now using LLM's to generate outputs is to use a prompt template, and adding appropriate context in what is called [prompt engineering](https://www.promptingguide.ai/):
+To instruct the LLM about the task we wish to perform, we use prompt templates
+developed using [prompt engineering](https://www.promptingguide.ai/)
 
 ![Using prompts with context](./0002-parallel-parrot-1.drawio.png)
 
-The idea is that a prompt template is designed that will take in an `input` and 
+The idea is to design a prompt template that will take in an `input` and 
 `context`, and use that to generate a text `prompt`.  This then gives the LLM the instructions it needs to generate the type of output desired.
 
-For example, if I wanted to shorten long documents while keeping their meaning, I might design a prompt template like:
+For example, to shorten long documents while keeping their meaning, design a prompt template like:
 
 ```
 Generate a concise summary of the following document, using the context provided:
@@ -33,25 +35,24 @@ context: ${context}
 document: ${document}
 ```
 
-Then use [code](https://peps.python.org/pep-0292/) to replace `${context}` with each context I want to use, and replace `${document}` with the text of each document I want to process.
-The same prompt template can then be used to summarize company blog posts for social media, while adding some context about the company itself.
-Or it could be used to summarize technical documents for different audiences, who may start at different levels of understanding.
+We then use [code](https://peps.python.org/pep-0292/) to replace `${context}` with each context and replace `${document}` with the text of each document being processed.
+The same prompt template serves many purposes. From summarizing company blog posts, to making meeting notes easier to review.  And it does so while injecting appropriate business context.
 
 ### Generating Data
 
 We've found that as one gets to more advanced use-cases, that the outputs that you want from the LLM inevitably become more complicated.  For example:
 
 - Using a long document to generate several "Frequently Asked Questions", in question and answer pairs
-- Parsing a document for multiple topics, and evaluate the sentiment (POSITIVE, NEUTRAL, or NEGATIVE) of each topic
+- Parsing a document for multiple topics, and infer the sentiment (POSITIVE, NEUTRAL, or NEGATIVE) of each topic
 - Identifying corporate entities in a document, and the role for each of them in the document (vendor, client, etc)
 
-For this one can leverage two features provided by modern LLM APIs:
-- structured output prompting: For OpenAI, this is the ["function calling"](https://platform.openai.com/docs/guides/gpt/chat-completions-api) feature, but really it is about modifying the prompt to request multiple outputs, formatted in a manner that is machine-readable (JSON)
-- the number of "choices" to create in an output (`n`).  This can be useful for leveraging the "creativity" of an LLM efficiently.  Process the same inputs, but ask the LLM to generate multiple outputs with random variations
+For this we can leverage two features provided by modern LLM APIs:
+- __JSON-formatted outputs__: Allows for easier parsing.  For OpenAI, this is the ["function calling"](https://platform.openai.com/docs/guides/gpt/chat-completions-api) feature
+- __Multiple Choices__:  Generate multiple different outputs for each request.  This can make it more likely that one of the outputs best matches the goal you are trying to achieve.  For OpenAI, this is specified by setting the number of choices (`n`) to be greater than one.
 
 ![Structured LLM output](./0002-parallel-parrot-2.drawio.png)
 
-For example, say I use the prompt template:
+For example, say we use the prompt template:
 ```
 Generate question and answer pairs from the following document.
 Output a list of JSON objects with keys "question" and "answer".
@@ -79,27 +80,27 @@ This could turn a [wikipedia page about George Washington](https://en.wikipedia.
 ```
 
 These question and answer pairs could then be used to:
-- create a new document of "Frequenty Asked Questions"
-- make the content easier to skim for a reader
-- store the questions in a search database, with a reference to the original document, to make it easier to match questions with the documents that answer them, even if the questions are phrased using different words.
+- Create a new document of "Frequenty Asked Questions"
+- Make the content easier to skim for a reader
+- Improve search database matches.  User questions typically match more closely to LLM generated questions than to original documents.
 
 ### Scale
 
-All of the above is great and useful, and done before, however things can get tricky when you try to scale.  A single response to a decently complicated prompt could take up to 30 seconds.  That means processing a thousand documents one after the other (in series) could take over 8 hours.
+The above is powerful, but it starts to get tricky when you try to scale to thousands of tasks.  Processing a thousand documents one after the other (in series) could take over 8 hours.  And if there is an API or network error near the end, it could for you to start all over.
 
-To help with this, we created a python package: [parallel-parrot](https://pypi.org/project/parallel-parrot/) that makes LLM calls in parallel, without having to worry about concurrency, retries, API throttling, and other related issues.  Parallelization can accomplish the same 8+ hour task in minutes.
+To address this, we created a python package: [parallel-parrot](https://pypi.org/project/parallel-parrot/) which makes LLM calls in parallel.  It deals with all the issues related to concurrency, retries, API throttling, and other low-level concerns.  Parallelization reduces the total time for processing a thousand documents from hours to minutes.
 
 Series vs Parallel:
 ![Series vs Parallel](./0002-parallel-parrot-3.drawio.png)
 
-parallel-parrot automatically:
-- takes in a pandas dataframe or native Python list of dictionaries
-- applies a prompt template to create a prompt per row
-- queries an API-based LLM in parallel, handling automatic retries and rate limiting
-- parses and dedupes the outputs from multiple choices, and from JSON outputs
-- outputs clean ([exploded](https://towardsdatascience.com/why-and-how-to-explode-a-list-like-column-to-rows-in-pandas-b69c3391c01c/) / [tidy](https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html) ) data in the original format
+[parallel-parrot](https://pypi.org/project/parallel-parrot/) automatically:
+- Takes in a pandas dataframe or native Python list of dictionaries
+- Applies a prompt template to create a prompt per row
+- Queries an API-based LLM in parallel, handling automatic retries and rate limiting
+- Parses and dedupes the outputs from multiple choices, and from JSON outputs
+- Outputs clean ([exploded](https://towardsdatascience.com/why-and-how-to-explode-a-list-like-column-to-rows-in-pandas-b69c3391c01c/) / [tidy](https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html) ) data in the original format
 
-So it can take in multiple rows of input data:
+For example, it can take in multiple rows of input data:
 
 ```json
 [
@@ -142,7 +143,7 @@ document: ${text}
 )
 ```
 
-And output generated question/answer pairs that also retain the information about the inputs they refer to.
+To generate useful question and answer pairs:
 
 ```json
 [
@@ -179,9 +180,9 @@ And output generated question/answer pairs that also retain the information abou
 ]
 ```
 
-Under the hood, the package uses the high-performance [aiohttp](https://docs.aiohttp.org/en/stable/) package.  And uses the efficient I/O library [libuv](https://libuv.org/) via [uvloop](https://github.com/MagicStack/uvloop).  It also adapts to different connection timeouts and retries using best-practices such as exponential backoff with jitter.
+Under the hood, it uses the high-performance [aiohttp](https://docs.aiohttp.org/en/stable/) package.  And uses the efficient I/O library [libuv](https://libuv.org/) via [uvloop](https://github.com/MagicStack/uvloop).  It also uses best practices such as exponential backoff with jitter to deal with connection timeouts and retries.
 
-Depending on the API-based LLM you are using, some require time to "warm up" machines in the cloud, and others like OpenAI have [rate limits](https://platform.openai.com/docs/guides/rate-limits/rate-limits-in-headers) which can vary depending on account tier.  The package handles this by first making a "setup" request, which is then used to configure and optimize the following bulk parallel requests.  That initial request also makes it easier to debug show-stopper issues like invalid credentials or API downtime.
+Depending on the API-based LLM you are using, some require time to "warm up" machines in the cloud.  Other APIs like OpenAI have [rate limits](https://platform.openai.com/docs/guides/rate-limits/rate-limits-in-headers) which can vary depending on account tier.  The package handles both of these by first making a "setup" request.  That request is used to configure and optimize the main parallel requests.  That same initial request also makes it easier to debug show-stopper issues like invalid credentials or API downtime.
 
 ![Setup request before batch](./0002-parallel-parrot-4.drawio.png)
 
@@ -189,4 +190,5 @@ Depending on the API-based LLM you are using, some require time to "warm up" mac
 
 We're open sourcing this [package](https://github.com/novex-ai/parallel-parrot) in the true spirit of open source: in the hopes that others find it useful as well.  Contributions and feedback are welcome, in the hopes that we can help each other unlock more of the value from this exciting new technology.
 
-Also, to meet the needs of clients who have come to us interested in effectively leveraging Generative AI for themselves, we just formalized a new company [Novex AI](https://novex.ai/) to help with that.
+Ready to implement Generative AI in your own company operations?  Contact us at 
+[Novex AI](https://novex.ai/) to tailor an effective solution that fits your needs.
