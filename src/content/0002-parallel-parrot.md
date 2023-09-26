@@ -86,7 +86,7 @@ These question and answer pairs could then be used to:
 
 ### Scale
 
-The above is powerful, but it starts to get tricky when you try to scale to thousands of tasks.  Processing a thousand documents one after the other (in series) could take over 8 hours.  And if there is an API or network error near the end, it could for you to start all over.
+The above is powerful, but it starts to get tricky when you try to scale to thousands of tasks.  Processing a thousand documents one after the other (in series) could take over 8 hours.  And if there is an API or network error near the end, it could force you to start all over.
 
 To address this, we created a python package: [parallel-parrot](https://pypi.org/project/parallel-parrot/) which makes LLM calls in parallel.  It deals with all the issues related to concurrency, retries, API throttling, and other low-level concerns.  Parallelization reduces the total time for processing a thousand documents from hours to minutes.
 
