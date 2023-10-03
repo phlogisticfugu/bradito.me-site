@@ -6,7 +6,7 @@ import { getCollection } from 'astro:content';
 import FormattedDate from '../components/FormattedDate.astro';
 
 const TITLE = "Blog - Brad Ito";
-const DESCRIPTION = "Thoughts and Insights on Technology, Design, and Business";
+const DESCRIPTION = "Thoughts on technology: applications, techniques and impact";
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
