@@ -4,6 +4,7 @@ node_modules
 .yarn
 yarn-error.log
 package-lock.json
+dist/
 
 # Build directory
 .astro/
