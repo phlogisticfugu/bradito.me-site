@@ -6,6 +6,5 @@ yarn-error.log
 package-lock.json
 
 # Build directory
-public/
 .astro/
 .DS_Store
