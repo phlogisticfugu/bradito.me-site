@@ -1,7 +1,15 @@
 {
   "name": "bradito.me-site",
-  "type": "module",
   "version": "0.0.1",
+  "description": "Personal website for Brad Ito",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phlogisticfugu/bradito.me-site.git"
+  },
+  "author": {
+    "name": "Brad Ito",
+    "email": "brad@bradito.me"
+  },
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
