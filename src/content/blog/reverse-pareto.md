@@ -2,7 +2,7 @@
 title: "Reverse Pareto Principle - Why AI will never reach 100%"
 description: "How to think strategically about Generative AI use-cases"
 pubDate: "2023-10-06"
-heroImage: "./0003-reverse-pareto-2.png"
+heroImage: "/0003-reverse-pareto-2.png"
 status: "published"
 ---
 
@@ -20,7 +20,7 @@ The problem is the Reverse Pareto Principle: that the remaining 20% of the outco
 statistical
 [Pareto Distribution](https://en.wikipedia.org/wiki/Pareto_distribution) never actually gets to 100%:
 
-![Cumulative Pareto Distribution](./0003-reverse-pareto-1.png)
+![Cumulative Pareto Distribution](/0003-reverse-pareto-1.png)
 
 A lot of exciting progress has been made in Generative AI in a very short amount of time.
 Chatbots can draft content that looks better than what most people can write.  And AI can create images that look realistic and better than what most people can draw.
@@ -30,7 +30,7 @@ rate of progress, more resources will get them to 100% faster than others, and t
 
 The problem is that those optimistic projections will not match reality:
 
-![Cumulative Pareto Distribution](./0003-reverse-pareto-2.png)
+![Cumulative Pareto Distribution](/0003-reverse-pareto-2.png)
 
 There will be more and more hard problems that take a lot of effort in order to move the needle the next 1%.  We're already seeing some of these problems in hallucinations, model safety and security, and difficulties in [performance measurement](https://www.anthropic.com/index/evaluating-ai-systems).
 
@@ -38,7 +38,7 @@ There will be more and more hard problems that take a lot of effort in order to 
 
 For those who want results sooner rather than later, from my experience in the last AI hype cycle, the solution is to "move the goalpost and claim victory".
 
-![Move the finish line](./0003-adam-winger-GIFlfKX23rc-unsplash.jpg)
+![Move the finish line](/0003-adam-winger-GIFlfKX23rc-unsplash.jpg)
 
 _Photo by [Adam Winger](https://unsplash.com/@awcreativeut) on [Unsplash](https://unsplash.com/photos/GIFlfKX23rc?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)_
 
