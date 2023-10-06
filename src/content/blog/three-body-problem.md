@@ -2,7 +2,7 @@
 title: "Generative AI solves the three body problem in digital communication"
 description: ""
 pubDate: "2023-09-06"
-heroImage: ""
+heroImage: "./blog-placeholder-2.jpg"
 status: "draft"
 ---
 

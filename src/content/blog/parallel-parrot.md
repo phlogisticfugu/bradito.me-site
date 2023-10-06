@@ -2,7 +2,7 @@
 title: "Accelerating LLM operations with parallel-parrot"
 description: "Wrangling a flock of LLMs for speed, fun, and profit"
 pubDate: "2023-09-25"
-heroImage: "/0002-gareth-davies-EGcfyDiUv58-unsplash.jpg"
+heroImage: "./0002-gareth-davies-EGcfyDiUv58-unsplash.jpg"
 status: "published"
 ---
 
@@ -16,7 +16,7 @@ We've developed [parallel-parrot](https://pypi.org/project/parallel-parrot/)
 To instruct the LLM about the task we wish to perform, we use prompt templates
 developed using [prompt engineering](https://www.promptingguide.ai/)
 
-![Using prompts with context](/0002-parallel-parrot-1.drawio.png)
+![Using prompts with context](./0002-parallel-parrot-1.drawio.png)
 
 The idea is to design a prompt template that will take in an `input` and 
 `context`, and use that to generate a text `prompt`.  This then gives the LLM the instructions it needs to generate the type of output desired.
@@ -44,7 +44,7 @@ For this we can leverage two features provided by modern LLM APIs:
 - __JSON-formatted outputs__: Allows for easier parsing.  For OpenAI, this is the ["function calling"](https://platform.openai.com/docs/guides/gpt/chat-completions-api) feature
 - __Multiple Choices__:  Generate multiple different outputs for each request.  This can make it more likely that one of the outputs best matches the goal you are trying to achieve.  For OpenAI, this is specified by setting the number of choices (`n`) to be greater than one.
 
-![Structured LLM output](/0002-parallel-parrot-2.drawio.png)
+![Structured LLM output](./0002-parallel-parrot-2.drawio.png)
 
 For example, say we use the prompt template:
 ```
@@ -85,7 +85,7 @@ The above is powerful, but it starts to get tricky when you try to scale to thou
 To address this, we created a python package: [parallel-parrot](https://pypi.org/project/parallel-parrot/) which makes LLM calls in parallel.  It deals with all the issues related to concurrency, retries, API throttling, and other low-level concerns.  Parallelization reduces the total time for processing a thousand documents from hours to minutes.
 
 Series vs Parallel:
-![Series vs Parallel](/0002-parallel-parrot-3.drawio.png)
+![Series vs Parallel](./0002-parallel-parrot-3.drawio.png)
 
 [parallel-parrot](https://pypi.org/project/parallel-parrot/) automatically:
 - Takes in a pandas dataframe or native Python list of dictionaries
@@ -178,7 +178,7 @@ Under the hood, it uses the high-performance [aiohttp](https://docs.aiohttp.org/
 
 Depending on the API-based LLM you are using, some require time to "warm up" machines in the cloud.  Other APIs like OpenAI have [rate limits](https://platform.openai.com/docs/guides/rate-limits/rate-limits-in-headers) which can vary depending on account tier.  The package handles both of these by first making a "setup" request.  That request is used to configure and optimize the main parallel requests.  That same initial request also makes it easier to debug show-stopper issues like invalid credentials or API downtime.
 
-![Setup request before batch](/0002-parallel-parrot-4.drawio.png)
+![Setup request before batch](./0002-parallel-parrot-4.drawio.png)
 
 ### Next Steps
 

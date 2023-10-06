@@ -2,7 +2,7 @@
 title: "Three Fallacies in Generative AI hype"
 description: ""
 pubDate: "2023-08-25"
-heroImage: ""
+heroImage: "./blog-placeholder-3.jpg"
 status: "draft"
 ---
 

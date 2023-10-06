@@ -2,7 +2,7 @@
 title: "Building a useful map of modern LLMs"
 description: "A data-driven linage visualization of Large Language Models, written in an AI-assisted manner using D3.js"
 pubDate: "2023-08-11"
-heroImage: '/0001-phlogistic-llm-map.png'
+heroImage: './0001-phlogistic-llm-map.png'
 status: "published"
 ---
 
@@ -11,8 +11,6 @@ and I like to use visual maps.  So I made a
 [data-driven dynamic LLM lineage map](https://phlogisticfugu.github.io/phlogistic-llm-map/)
 ([source code](https://github.com/phlogisticfugu/phlogistic-llm-map))
 to suit my needs.  Hopefully, you find it useful too:
-
-[![LLM Map](/0001-phlogistic-llm-map.png)](https://phlogisticfugu.github.io/phlogistic-llm-map/)
 
 While I do love to build things, I love to build things that provide useful value even more. So I first took a look at
 [some](https://arxiv.org/abs/2303.18223) of the
