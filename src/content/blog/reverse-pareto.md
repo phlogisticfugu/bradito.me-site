@@ -8,7 +8,7 @@ status: "published"
 
 Many of the most buzzy use-cases for Generative AI are doomed, and the people working on those projects don't yet know it.  Here's why:
 
-## The Reverse Pareto Principle Problem
+## The Problem
 
 The [Pareto Principle](https://en.wikipedia.org/wiki/Pareto_principle), otherwise known as the 80/20 rule, states
 that about 80% of the outcome comes from 20% of the effort.  It's an observed behavior of many complex systems.
