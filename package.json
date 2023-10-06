@@ -20,10 +20,10 @@
     "deploy": "npm run clean && npm run build && mv dist docs && cp ./CNAME docs/CNAME"
   },
   "dependencies": {
-    "@astrojs/mdx": "^1.1.0",
+    "@astrojs/mdx": "^1.1.1",
     "@astrojs/rss": "^3.0.0",
-    "@astrojs/sitemap": "^3.0.0",
-    "astro": "^3.2.2",
+    "@astrojs/sitemap": "^3.0.1",
+    "astro": "^3.2.3",
     "astro-favicons": "^1.0.1"
   },
   "devDependencies": {
