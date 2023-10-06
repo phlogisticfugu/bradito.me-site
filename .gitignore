@@ -10,3 +10,5 @@ dist/
 # Build directory
 .astro/
 .DS_Store
+
+.python-version
