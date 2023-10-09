@@ -1,7 +1,7 @@
 {
   "name": "bradito.me - personal website of Brad Ito",
   "short_name": "bradito.me",
-  "description": "A Multi-platform Favicon generator for Astro Project.",
+  "description": "Personal website of Brad Ito",
   "dir": "auto",
   "lang": "en-US",
   "display": "standalone",
