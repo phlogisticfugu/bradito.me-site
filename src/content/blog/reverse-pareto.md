@@ -58,6 +58,11 @@ decisions may not have a great return on investment.
 When I was at [Topaz Labs](https://www.topazlabs.com/) I saw first-hand the importance of picking the right use-case.  The hype at the time was for using AI for image recognition, presumably to then automate decisions based on images.  Topaz instead focused on using AI for image enhancement.  Packaged as a tool for people to use, people
 could be delighted when the AI produced a great result, but also painlessly reject results that were not so great.
 
+At [Retina AI](https://retina.ai/) we predicted consumer buying behavior via Customer Lifetime Value (CLV).
+The Retina model predicts future purchases and churn date with 90-95% accuracy.
+While predictive CLV has many use-cases, we found success with optimizing marketing campaigns.  In part, this is
+because marketing is inherently about changing probabilities, and being right 95% of the time can be quite profitable.
+
 A successful early use-case for AI will have a low cost for being wrong.  That way, even if the AI is great only 80% of the time, it can still deliver value.
 When there is a high cost for being wrong, projects will be setup with a high accuracy goal which starts out seeming reasonable, but ends up in a
 [project death march](https://en.wikipedia.org/wiki/Death_march_(project_management)).
