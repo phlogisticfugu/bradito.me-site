@@ -11,7 +11,7 @@ export default defineConfig({
   integrations: [mdx(), sitemap(), favicons({
     appName: "bradito.me - personal website of Brad Ito",
     appShortName: "bradito.me",
-    appDescription: "Personal website of Brad Ito",
+    appDescription: "Thoughts on technology: applications, techniques and impact",
     masterPicture: "./src/website-icon.png",
     emitAssets: true,
     faviconsDarkMode: false
