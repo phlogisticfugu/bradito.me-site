@@ -37,7 +37,7 @@ The "devil is in the details".
 There will be more and more hard problems that take an increasing amount effort to move the needle the next 1%.
 In Generative AI, we're already seeing concerns with hallucinations, model safety and security, and challenges in
  [performance measurement](https://www.anthropic.com/index/evaluating-ai-systems).  The issue is that even after solving these,
-there will be more concerns to discover and solve.
+there will be more problems to discover and solve.
 
 ## Strategic Solution
 
@@ -63,12 +63,14 @@ The Retina model predicts future purchases and churn date with 90-95% accuracy.
 While predictive CLV has many use-cases, we found success with optimizing marketing campaigns.  In part, this is
 because marketing is inherently about changing probabilities, and being right 95% of the time can be quite profitable.
 
-A successful early use-case for AI will have a low cost for being wrong.  That way, even if the AI is great only 80% of the time, it can still deliver value.
-When there is a high cost for being wrong, projects will be setup with a high accuracy goal which starts out seeming reasonable, but ends up in a
+A successful early use-case for AI will have a __low cost for being wrong__.
+In such a use-case, even if the AI is great only 80% of the time, it can still deliver value.
+When there is a high cost for being wrong, the AI project is setup for failure.
+It will need high accuracy and reliability, a goal which starts out seeming reasonable, but ends up in a
 [project death march](https://en.wikipedia.org/wiki/Death_march_(project_management)).
 
-_Caveat Emptor_ - Eventually, with enough effort, new technologies do become reliable.
-Airplanes eventually became commercially viable, it just wasn't the [Wright Brothers](https://en.wikipedia.org/wiki/Wright_brothers) who benefitted.
+_Caveat Emptor_ - Note that eventually, with enough effort, new technologies do become reliable enough.
+For example, airplanes eventually became commercially viable, it just wasn't the [Wright Brothers](https://en.wikipedia.org/wiki/Wright_brothers) who benefitted.
 
 ## More
 
