@@ -9,6 +9,8 @@ import cloudflare from "@astrojs/cloudflare";
 export default defineConfig({
   site: 'https://bradito.me',
   integrations: [mdx(), sitemap(), favicons({
+    appName: "bradito.me - personal website of Brad Ito",
+    appShortName: "bradito.me",
     masterPicture: "./src/website-icon.png",
     emitAssets: true,
     faviconsDarkMode: false
