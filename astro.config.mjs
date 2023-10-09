@@ -13,6 +13,6 @@ export default defineConfig({
     emitAssets: true,
     faviconsDarkMode: false
   })],
-  output: "server",
+  output: "hybrid",
   adapter: cloudflare()
 });
