@@ -65,8 +65,8 @@ because marketing is inherently about changing probabilities, and being right 95
 
 A successful early use-case for AI will have a __low cost for being wrong__.
 In such a use-case, even if the AI is great only 80% of the time, it can still deliver value.
-When there is a high cost for being wrong, the AI project is setup for failure.
-It will need high accuracy and reliability, a goal which starts out seeming reasonable, but ends up in a
+When instead there is a high cost for being wrong, the AI project is setup for failure.
+It will need high accuracy and reliability: a goal which starts out seeming reasonable, but ends up in a
 [project death march](https://en.wikipedia.org/wiki/Death_march_(project_management)).
 
 _Caveat Emptor_ - Note that eventually, with enough effort, new technologies do become reliable enough.
