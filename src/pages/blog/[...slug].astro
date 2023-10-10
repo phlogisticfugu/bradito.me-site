@@ -6,6 +6,12 @@ import BlogPost from '../../layouts/BlogPost.astro';
 const posts = await getCollection('blog');
 type Props = CollectionEntry<'blog'>;
 
+export async function getStaticPaths() {
+	const posts = await getCollection('blog');
+	const paths = posts.map((post) => ({ params: { slug: post.slug } }));
+	return paths;
+}
+
 const { slug } = Astro.params;
 const post = posts.find((page) => page.slug === slug);
 if (!post) return Astro.redirect("/404");
