@@ -12,8 +12,6 @@ and I like to use visual maps.  So I made a
 ([source code](https://github.com/phlogisticfugu/phlogistic-llm-map))
 to suit my needs.  Hopefully, you find it useful too:
 
-[![LLM Map](/0001-phlogistic-llm-map.png)](https://phlogisticfugu.github.io/phlogistic-llm-map/)
-
 While I do love to build things, I love to build things that provide useful value even more. So I first took a look at
 [some](https://arxiv.org/abs/2303.18223) of the
 [existing](https://github.com/Mooler0410/LLMsPracticalGuide)
