@@ -34,8 +34,8 @@ The problem is that those optimistic projections will not match reality:
 ![Cumulative Pareto Distribution](/0003-reverse-pareto-2.png)
 
 The "devil is in the details".
-There will be more and more hard problems that take an increasing amount effort to move the needle the next 1%.
-In Generative AI, we're already seeing concerns with hallucinations, model safety and security, and challenges in
+There will be more and more hard problems that take an increasing effort to move the needle the next 1%.
+In Generative AI, we're already seeing concerns with hallucinations, unreliable outputs, model safety and security, and challenges in
  [performance measurement](https://www.anthropic.com/index/evaluating-ai-systems).  The issue is that even after solving these,
 there will be more problems to discover and solve.
 
