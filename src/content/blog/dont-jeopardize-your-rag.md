@@ -81,3 +81,8 @@ in this blog post, and some initial testing has shown this to be promising.
 [parallel-parrot](https://pypi.org/project/parallel-parrot/) is a Python package which optimizes parallel calls to the OpenAI Chat API.
 It can be used to efficiently generate questions from thousands of document chunks at a time, without having to worry about rate limits or
 throttling of the API.
+
+---
+
+Cover photo by [Jon Tyson](https://unsplash.com/@jontyson?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)
+on [Unsplash](https://unsplash.com/photos/white-markee-light-hhq1Lxtuwd8?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)

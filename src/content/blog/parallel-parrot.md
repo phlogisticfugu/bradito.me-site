@@ -186,3 +186,8 @@ We're open sourcing this [package](https://github.com/novex-ai/parallel-parrot) 
 
 Ready to implement Generative AI in your own company operations?  Contact us at 
 [Novex AI](https://novex.ai/) to tailor an effective solution that fits your needs.
+
+---
+
+Cover photo by [Gareth Davies](https://unsplash.com/@gdfoto?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)
+on [Unsplash](https://unsplash.com/photos/flock-of-yellow-bird-flying-EGcfyDiUv58?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)
