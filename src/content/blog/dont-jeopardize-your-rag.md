@@ -82,6 +82,9 @@ in this blog post, and some initial testing has shown this to be promising.
 It can be used to efficiently generate questions from thousands of document chunks at a time, without having to worry about rate limits or
 throttling of the API.
 
+Ready to implement Generative AI in your own company operations?  Contact us at 
+[Novex AI](https://novex.ai/) to tailor an effective solution that fits your needs.
+
 ---
 
 Cover photo by [Jon Tyson](https://unsplash.com/@jontyson?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)
