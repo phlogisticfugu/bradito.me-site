@@ -1,5 +1,5 @@
 ---
-title: "Don't jeopardize your RAG"
+title: "Don't jeopardize your RAG - RAG with Question Generation"
 description: "Why your Retrieval Augmented Generation (RAG) is underperforming, and what to do about it"
 pubDate: "2023-11-10"
 heroImage: '/0004-jon-tyson-hhq1Lxtuwd8-unsplash.jpg'
@@ -47,7 +47,7 @@ This hypothetical answer is wrong, but it's embedding vector is likely to more c
 the document chunks, because we are matching answers to answers.  Note that it is a good idea to also try to match the original
 question in addition to the hypothetical answer to ensure that we are maximizing our chances for a semantic match.
 
-### Better Solution: Question Generation
+### New Solution: RAG with Question Generation
 
 An improved solution is to do pre-processing on the document chunks before they go into the vector database.
 We can ask an LLM to generate questions which are best answered by the document chunk.
@@ -55,20 +55,21 @@ We can ask an LLM to generate questions which are best answered by the document 
 For example, we could take a chunk from the [wikipedia page for France](https://en.wikipedia.org/wiki/France)
 and the LLM could generate a question such as "What is the capital of the country France?"
 
-![RAG with HyDE](/0004-jeopardize-rag-3.drawio.png)
+![RAG with Question Generation](/0004-jeopardize-rag-3.drawio.png)
 
 This approach results in much better semantic matching, potentially even exact matching, because we are comparing
 questions to questions.  It also leverages the strength of a database which is to query many rows at once - and can
 thus deal with many more embedding vectors for each of the generated questions per chunk.
 
-In a full implementation of this, match all three:
+In a full implementation, match all three:
 
 - original question to document chunks
 - generated hypothetical answer to document chunks (HyDE)
 - original question to generated questions (NEW)
 
 This ensures that we maximize the chances for a better semantic match, resulting in better context being retrieved
-and better knowledge for our chatbot.
+and better knowledge for our chatbot.  We haven't found any academic papers about this approach, but in our own empirical
+testing it gives better results.
 
 ### Next Steps
 
