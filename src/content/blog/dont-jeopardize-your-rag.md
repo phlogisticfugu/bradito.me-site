@@ -17,11 +17,11 @@ For example, a player is given an answer like "King Louis XIV ruled over this Eu
 expected to come up with the question "What is France?".  This is an awkward way of asking about trivia,
 but it makes the game more challenging due to the extra mental steps.
 
-The problem is that when most people are doing RAG, they are asking their vector database to do a similar set of
-extra mental steps, resulting in poor quality results.  Most knowledge documents are statements of facts, in narrative form.  For example, see the
+The problem is that when most people are doing RAG, they are asking their vector database to do 
+extra mental steps.  This results in poor quality results.  Most knowledge documents are statements of facts, in narrative form.  For example, see the
 [wikipedia page for France](https://en.wikipedia.org/wiki/France).  In a basic RAG setup, these documents are then
-divided into smaller chunks, then sent through an embedding model, which creates a multi-dimensional vector for each
-one of those chunks.  These vectors are then stored in a vector database.
+divided into smaller chunks.  Each chunk is sent through an embedding model, which creates a multi-dimensional vector.
+The vectors are then stored in a vector database.
 
 ![Basic RAG](/0004-jeopardize-rag-1.drawio.png)
 
@@ -30,8 +30,8 @@ compared to all of the other vectors currently in the vector database to see whi
 The retrieved document chunks are then used by a Large Language Model (LLM) to create a more-informed response to the original question.
 
 The problem is that there is a fundamental semantic mismatch between the vectors being compared.  We're trying to compare questions (from the chat message)
-to answers (from the document chunks).  The embedding vector generated from a question will always be different from the embedding vector
-generated from an answer.  This leads to unnecessarily poor performance of the RAG process.
+to answers (from the document chunks).  The embedding vector for a question will always be different from the embedding vector
+for an answer.  This leads to unnecessarily poor performance of the RAG process.
 
 ### Partial Solution: Hypothetical Document Embedding (HyDE)
 
@@ -44,24 +44,29 @@ For example, it would turn an input question such as "What is the capital of Fra
 ![RAG with HyDE](/0004-jeopardize-rag-2.drawio.png)
 
 This hypothetical answer is wrong, but it's embedding vector is likely to more closely match
-the document chunks, because we are matching answers to answers.  Note that it is a good idea to also try to match the original
-question in addition to the hypothetical answer to ensure that we are maximizing our chances for a semantic match.
+the document chunks.  With HyDE, we are matching answers to answers, resulting in more similar embedding vectors.
+Note that, to get the most out of this approach, it is a good idea to also try to match the original
+question in addition to the hypothetical answer.
 
 ### New Solution: RAG with Question Generation
 
 An improved solution is to do pre-processing on the document chunks before they go into the vector database.
 We can ask an LLM to generate questions which are best answered by the document chunk.
 
-For example, we could take a chunk from the [wikipedia page for France](https://en.wikipedia.org/wiki/France)
-and the LLM could generate a question such as "What is the capital of the country France?"
+For example, take text from the [wikipedia page for France](https://en.wikipedia.org/wiki/France).
+Then send the LLM a prompt: "Generate a list of standard questions best answered by: {text}"
+and it generates questions such as: "What is the capital of the country France?".  Take the resulting
+questions, generate embedding vectors for each, and store them in the vector database, with a reference
+to the original document text to use as context.
 
 ![RAG with Question Generation](/0004-jeopardize-rag-3.drawio.png)
 
-This approach results in much better semantic matching, potentially even exact matching, because we are comparing
-questions to questions.  It also leverages the strength of a database which is to query many rows at once - and can
-thus deal with many more embedding vectors for each of the generated questions per chunk.
+This method uses the vector database to compare questions to questions, resulting in better RAG performance.
+The vectors for the user's chat question and the generated questions are much closer, potentially even exactly the same.
+While this does result in more vectors to search, that leverages the strength of a database, which is to make that search
+[fast and efficient](https://www.pinecone.io/learn/series/faiss/hnsw/).
 
-In a full implementation, match all three:
+In a full implementation, combine all three semantic match techniques:
 
 - original question to document chunks
 - generated hypothetical answer to document chunks (HyDE)
