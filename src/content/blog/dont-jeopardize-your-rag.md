@@ -29,8 +29,8 @@ Upon retrieval, the raw chat message is sent through the same embedding model, c
 compared to all of the other vectors currently in the vector database to see which document chunk or chunks are most similar.
 The retrieved document chunks are then used by a Large Language Model (LLM) to create a more-informed response to the original question.
 
-The problem is that there is a fundamental semantic mismatch between the vectors being compared.  We're trying to compare questions (from the chat message)
-to answers (from the document chunks).  The embedding vector for a question will always be different from the embedding vector
+The problem is that there is a fundamental semantic mismatch between the vectors being compared.  We're trying to compare _questions_ (from the chat message)
+to _answers_ (from the document chunks).  The embedding vector for a question will always be different from the embedding vector
 for an answer.  This leads to unnecessarily poor performance of the RAG process.
 
 ### Partial Solution: Hypothetical Document Embedding (HyDE)
@@ -44,7 +44,7 @@ For example, it would turn an input question such as "What is the capital of Fra
 ![RAG with HyDE](/0004-jeopardize-rag-2.drawio.png)
 
 This hypothetical answer is wrong, but it's embedding vector is likely to more closely match
-the document chunks.  With HyDE, we are matching answers to answers, resulting in more similar embedding vectors.
+the document chunks.  With HyDE, we are matching _answers_ to _answers_, resulting in more similar embedding vectors.
 Note that, to get the most out of this approach, it is a good idea to also try to match the original
 question in addition to the hypothetical answer.
 
@@ -55,22 +55,22 @@ We can ask an LLM to generate questions which are best answered by the document 
 
 For example, take text from the [wikipedia page for France](https://en.wikipedia.org/wiki/France).
 Then send the LLM a prompt: "Generate a list of standard questions best answered by: {text}"
-and it generates questions such as: "What is the capital of the country France?".  Take the resulting
+and it generates questions such as: "What is the capital of the country France?".  Use the resulting
 questions, generate embedding vectors for each, and store them in the vector database, with a reference
 to the original document text to use as context.
 
 ![RAG with Question Generation](/0004-jeopardize-rag-3.drawio.png)
 
-This method uses the vector database to compare questions to questions, resulting in better RAG performance.
+This method uses the vector database to compare _questions_ to _questions_, resulting in better RAG performance.
 The vectors for the user's chat question and the generated questions are much closer, potentially even exactly the same.
 While this does result in more vectors to search, that leverages the strength of a database, which is to make that search
 [fast and efficient](https://www.pinecone.io/learn/series/faiss/hnsw/).
 
 In a full implementation, combine all three semantic match techniques:
 
-- original question to document chunks
-- generated hypothetical answer to document chunks (HyDE)
-- original question to generated questions (NEW)
+- original _question_ to document chunk _"answer"_
+- generated hypothetical _answer_ to document chunk _answer_ (HyDE)
+- original _question_ to generated _question_ (NEW)
 
 This ensures that we maximize the chances for a better semantic match, resulting in better context being retrieved
 and better knowledge for our chatbot.  We haven't found any academic papers about this approach, but in our own empirical
