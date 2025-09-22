@@ -16,8 +16,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "clean": "rimraf .astro dist docs",
-    "deploy": "pnpm run clean && pnpm run build && mv dist docs && cp ./CNAME docs/CNAME"
+    "clean": "rimraf .astro dist"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^12.6.9",
