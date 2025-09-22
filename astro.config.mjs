@@ -16,6 +16,5 @@ export default defineConfig({
     emitAssets: true,
     faviconsDarkMode: false
   })],
-  output: "static",
   adapter: cloudflare()
 });
